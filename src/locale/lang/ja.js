@@ -96,7 +96,7 @@ export default {
       sumText: '合計'
     },
     tree: {
-      emptyText: 'データなし'
+      emptyText: '掲載物件なし'
     },
     transfer: {
       noMatch: 'データなし',
