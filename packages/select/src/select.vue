@@ -54,6 +54,7 @@
         @keydown="resetInputState"
         @keydown.down.prevent="handleNavigate('next')"
         @keydown.up.prevent="handleNavigate('prev')"
+        @keydown.enter.prevent="selectOption"
         @keydown.esc.stop.prevent="visible = false"
         @keydown.delete="deletePrevTag"
         @keydown.tab="visible = false"
@@ -85,6 +86,7 @@
       @input="debouncedOnInputChange"
       @keydown.native.down.stop.prevent="handleNavigate('next')"
       @keydown.native.up.stop.prevent="handleNavigate('prev')"
+      @keydown.native.enter.prevent="selectOption"
       @keydown.native.esc.stop.prevent="visible = false"
       @keydown.native.tab="visible = false"
       @compositionstart="handleComposition"
@@ -745,6 +747,18 @@
           }
           if (this.visible) {
             (this.$refs.input || this.$refs.reference).focus();
+          }
+        }
+      },
+
+      selectOption() {
+        if (!this.visible) {
+          this.toggleMenu();
+        } else {
+          if (this.isOnComposition) return;
+
+          if (this.options[this.hoverIndex]) {
+            this.handleOptionSelect(this.options[this.hoverIndex]);
           }
         }
       },
