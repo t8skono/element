@@ -8,7 +8,7 @@ Añada `v-infinite-scroll` a la lista para ejecutar automáticamente el método 
 
 ```html
 <template>
-  <ul class="infinite-list" v-infinite-scroll="load">
+  <ul class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
     <li v-for="i in count" class="infinite-list-item">{{ i }}</li>
   </ul>
 </template>
@@ -35,7 +35,7 @@ Añada `v-infinite-scroll` a la lista para ejecutar automáticamente el método 
 :::demo
 ```html
 <template>
-  <div class="infinite-list-wrapper">
+  <div class="infinite-list-wrapper" style="overflow:auto">
     <ul
       class="list"
       v-infinite-scroll="load"
@@ -83,6 +83,6 @@ Añada `v-infinite-scroll` a la lista para ejecutar automáticamente el método 
 | Atributos | Descripción | Tipo | Valores aceptados | Por defecto |
 | -------------- | ------------------------------ | --------- | ------------------------------------ | ------- |
 | infinite-scroll-disabled | si esta disabled | boolean      | - |false |
-| infinite-scroll-delay   | retraso en milisegundos | number       |   - |200   |
+| infinite-scroll-delay   | retraso en mili segundos | number       |   - |200   |
 | infinite-scroll-distance| distancia de activación (px) | number   |- |0 |
 | infinite-scroll-immediate |Si se debe ejecutar el método de carga inmediatamente, en caso de que el contenido no se pueda rellenar en el estado inicial. | boolean | - |true |

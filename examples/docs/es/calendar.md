@@ -57,8 +57,8 @@ Muestra fechas.
 | Atributo        | Descripción        | Tipo      | Valores aceptados     | Por defecto |
 |-----------------|------------------- |---------- |---------------------- |------------ |
 | value / v-model | valor vinculante   | Date/string/number | —            | —           |
-| range           | rango de tiempo, incluyendo el tiempo de inicio y el tiempo final. El tiempo de inicio debe ser el lunes, el tiempo final debe ser el domingo, el período no puede exceder los dos meses. | Array     | —           | —      |
-| first-day-of-week | fisrt day of week| Number    | 1 to 7                |  1          |
+| range           | rango de tiempo, incluyendo el tiempo de inicio y el tiempo final. Start time debe ser el primer dia de la semana, end time debe ser el ultimo día de la semana, el time entre las fechas no puede exceder dos meses | Array     | —           | —      |
+| first-day-of-week | primer día de la semana | Number    | 1 to 7                |  1          |
 
 ### dateCell scoped slot
 | Atributo      | Descripción | Tipo   | Valores aceptados | Por defecto |
