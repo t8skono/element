@@ -17,6 +17,7 @@
       :true-value="activeValue"
       :false-value="inactiveValue"
       :disabled="switchDisabled"
+      @keydown.enter="switchValue"
     >
     <span
       :class="['el-switch__label', 'el-switch__label--left', !checked ? 'is-active' : '']"
@@ -140,6 +141,9 @@
         let newColor = this.checked ? this.activeColor : this.inactiveColor;
         this.$refs.core.style.borderColor = newColor;
         this.$refs.core.style.backgroundColor = newColor;
+      },
+      switchValue() {
+        !this.switchDisabled && this.handleChange();
       },
       getMigratingConfig() {
         return {
